@@ -20,7 +20,7 @@ async function start() {
   const app = express();
   app.use('/', Agendash(agenda));
 
-  let serverPort = process.env.PORT || 3000;
+  const serverPort = process.env.PORT || 3000;
   app.set("port", serverPort);
 
   const server = http.createServer(app);
@@ -28,12 +28,6 @@ async function start() {
     console.log(
       `Agendash started http://localhost:${serverPort}/`
     );
-    // print all routes
-    app._router.stack.forEach((r: any) => {
-      if (r.route && r.route.path) {
-        console.log(r.route.path);
-      }
-    });
   });
 }
 

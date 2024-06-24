@@ -1,6 +1,6 @@
 {
   "name": "@sealos/agendash",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A fork of dashboard for Agenda.js with Pagination and Search capabilities",
   "main": "dist/app.js",
   "engines": {
@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "dev": "ts-node standalone.ts",
     "prepublishOnly": "npm run build",
     "release": "semantic-release",
     "lint": "eslint ./",
