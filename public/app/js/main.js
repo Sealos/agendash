@@ -72,6 +72,10 @@ const app = Vue.component("app", {
       this.showNewJob = true;
     },
     searchForm(name, search, property, limit, skip, refresh, state, object) {
+      const url = new URL(window.location);
+      url.searchParams.set("limit", limit);
+      window.history.replaceState({}, '', url);
+
       this.pagesize = limit ? limit : this.pagesize
         this.name = name
         this.search = search
